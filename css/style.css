@@ -560,14 +560,16 @@ body.lock {
   -webkit-appearance: none;
   text-align: center;
   font-family: inherit;
+  font-weight: 500;
   outline: none;
   padding: 1rem 0.9375rem;
   border: 1px solid #14161B;
   border-radius: 2.1875rem;
-  line-height: 1rem;
+  line-height: 1.25rem;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  color: #14161B;
   min-width: 13.25rem;
   -webkit-transition: color 0.3s ease 0s;
   -o-transition: color 0.3s ease 0s;
@@ -680,6 +682,7 @@ body.lock {
   background-color: #e9e9e9;
   top: -4.375rem;
   right: 0;
+  outline: none;
 }
 
 .menu {
@@ -782,6 +785,7 @@ body.lock {
   padding-left: 5.625rem;
   grid-template-columns: minmax(18.75rem, 46.875rem) auto;
   margin-top: -5rem;
+  margin-bottom: 4.375rem;
 }
 
 .inform__company {
@@ -803,13 +807,46 @@ body.lock {
   max-width: 37.5rem;
   color: #FFFFFF;
   margin-bottom: 3.125rem;
+  position: relative;
+  z-index: 1;
+}
+
+.inform-actions__square {
+  position: absolute;
+  z-index: -1;
+  border: 1px solid #353535;
+  border-radius: 1.5625rem;
+  top: -1rem;
+  right: 0;
+  width: 7.75rem;
+  height: 7.75rem;
+}
+
+.inform-actions__square::after,
+.inform-actions__square::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.inform-actions__square::before {
+  background-color: #14161B;
+  width: 1.625rem;
+  height: 1.625rem;
+}
+
+.inform-actions__square::after {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #3D3D3D;
 }
 
 .inform-company__item {
   display: grid;
   grid-template: auto/repeat(3, 1fr);
-  padding: 2.5rem 0rem;
-  padding-left: 2.5rem;
+  padding: 2.5rem 0rem 2.5rem 2.5rem;
   gap: 1.875rem;
   position: relative;
 }
@@ -844,38 +881,73 @@ body.lock {
      object-fit: contain;
 }
 
-.footer {
-  overflow: hidden;
+.footer__container {
+  border-top: 1px solid #E9E9E9;
 }
 
 .footer__inner {
-  padding-top: 3.75rem;
-  padding-bottom: 2.5rem;
-}
-
-.footer .swiper {
-  overflow: visible;
-}
-
-.footer .swiper-slide {
-  pointer-events: none;
+  margin: 1.25rem auto;
+  max-width: 200%;
   padding: 1.5625rem 0px;
+}
+
+.footer-slider {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-display: column;
-  height: auto;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  width: 300%;
+  -webkit-animation: marquee 15s infinite linear;
+          animation: marquee 15s infinite linear;
+  overflow: hidden;
+}
+
+.footer-slider__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-right: 2.5rem;
+  width: 150%;
 }
 
-.footer-slider__img {
-  max-width: 100%;
-  height: auto;
+@-webkit-keyframes marquee {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+
+  100% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+
+  100% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+.footer-slider__item {
+  margin-right: 2.5rem;
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media (max-width: 1920px) {
@@ -936,7 +1008,6 @@ body.lock {
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
-    top: calc(50% - 1px);
     left: 0px;
     position: absolute;
     width: 100%;
@@ -1014,10 +1085,6 @@ body.lock {
   .inform .inform-actions {
     min-height: auto;
   }
-
-  .inform-company__item {
-    padding-left: 0px;
-  }
 }
 
 @media (max-width: 1024px) {
@@ -1049,6 +1116,10 @@ body.lock {
 
   .inform-actions__text {
     max-width: 100%;
+  }
+
+  .inform-company__item {
+    padding: 2.5rem 0px;
   }
 }
 
