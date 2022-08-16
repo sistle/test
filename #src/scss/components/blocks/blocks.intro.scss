@@ -1,0 +1,64 @@
+.intro {
+	padding-top: var(--headerHeight);
+	overflow: hidden;
+
+	@media (max-width: $d5) {
+		--headerHeight: 80px;
+	}
+
+	@media (max-width: $tablet) {
+		--headerHeight: 50px;
+	}
+
+	@media (max-width: $mobile) {
+		--headerHeight: 50px;
+	}
+
+	&__inner {
+		padding: rem(100) 0px;
+		background-image: url(../img/intro.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	&__title {
+		display: flex;
+		flex-direction: column;
+		margin-left: rem(-30);
+		margin-bottom: rem(45);
+		color: $white;
+		font-weight: 700;
+		font-size: rem(250);
+		line-height: 74%;
+
+		@media(max-width:1720px) {
+			font-size: rem(200);
+			margin-left: rem(-20);
+		}
+
+		@media(max-width:$d4) {
+			font-size: rem(150);
+			margin-left: rem(-10);
+		}
+
+		@media(max-width:870px) {
+			margin-left: 0px;
+			gap: rem(20);
+			align-items: center;
+			font-size: rem(100);
+		}
+
+		@media(max-width:$mobile) {
+			font-size: rem(50);
+		}
+	}
+
+	&__sup-title {
+		padding-left: rem(60);
+
+		@media(max-width:870px) {
+			// padding-left: ;
+		}
+	}
+}

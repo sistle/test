@@ -1,0 +1,48 @@
+.footer {
+	&__container {
+		border-top: 1px solid #E9E9E9;
+	}
+
+	&__inner {
+		margin: rem(20) auto;
+		max-width: 200%;
+		padding: rem(25) 0px;
+	}
+
+}
+
+.footer-slider {
+
+	display: flex;
+	width: 300%;
+	animation: marquee 15s infinite linear;
+	overflow: hidden;
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+
+		margin-right: rem(40);
+		width: 150%;
+	}
+
+	@keyframes marquee {
+		0% {
+			transform: translateX(0%)
+		}
+
+		100% {
+			transform: translateX(-50%)
+		}
+	}
+
+
+	&__item {
+		margin-right: rem(40);
+		width: 25%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+}

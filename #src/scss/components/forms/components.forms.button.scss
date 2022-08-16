@@ -1,0 +1,40 @@
+//<BUTTONS >====================================================================================================
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	-webkit-appearance: none;
+	text-align: center;
+
+	font-family: inherit;
+	font-weight: 500;
+	outline: none;
+	padding: rem(16) rem(15);
+	border: 1px solid $black;
+	border-radius: rem(35);
+	line-height: rem(20);
+	transition: all 0.3s ease;
+	color: $black;
+	min-width: rem(212);
+	@include interactive-effects($red, color);
+
+	@media (any-hover: hover) {
+		&:hover {
+			border-color: $red;
+		}
+	}
+
+	&--red {
+		background-color: $red;
+		border-color: transparent;
+		color: $white;
+		@include interactive-effects($white, color);
+		min-width: rem(270);
+	}
+
+	&[disabled] {
+		cursor: not-allowed;
+	}
+}
+
+//</BUTTONS>====================================================================================================

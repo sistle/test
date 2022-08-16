@@ -1,0 +1,7 @@
+[class^="icon__"],
+[class*=" icon__"] {
+	&:before {
+		@extend %icons;
+		display: block;
+	}
+}

@@ -1,0 +1,29 @@
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: $fontSize;
+
+  @media (max-width: $d4) {
+    font-size: 13px;
+  }
+  @media (max-width: $tablet) {
+    font-size: 12px;
+  }
+}
+
+body {
+  color: $black;
+  font-family: $fontFamily, Arial, sans-serif;
+
+  font-weight: $fontBase;
+  line-height: $lhBase;
+
+  text-size-adjust: 100%;
+
+  &.lock {
+    overflow: hidden;
+  }
+}
